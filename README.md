@@ -7,6 +7,7 @@
 * [Setup](#setup)
 * [Directions](#directions)
 * [Processing](#in_processing)
+
 ## General info
 - Use covid-19 datasets provided by JHU to fit epidemiology model to U.S.. After figuring out the infection parameter, we can then predict 
 
@@ -33,5 +34,5 @@ We applied our methods to south California.  We obtained the following results:A
 - [TODO] Using Apple's mobility data, we are able to fit a Bayesian model and use the model to predict future number of infected with new lockdowns/un-lockdowns. 
 
 ## Contact
-Shuyuan Wang shw276@ucsd.edu
-Caiwei Wang caw062@ucsd.edu
+- Shuyuan Wang shw276@ucsd.edu
+- Caiwei Wang caw062@ucsd.edu
