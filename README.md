@@ -27,11 +27,11 @@ Project is created with:
 
 ## Processing
 
-  ### Achievements
+### Achievements
 
 We applied our methods to south California.  We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases
 
-  ### Problem to Solve
+### Problem to Solve
 
 - [TODO] Using Apple's mobility data, we are able to fit a Bayesian model and use the model to predict future number of infected with new lockdowns/un-lockdowns. 
 
