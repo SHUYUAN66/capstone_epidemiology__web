@@ -2,17 +2,22 @@
 # Using Epidemiology Model To Predict Case Numbers for COVID-19
 
 ## Table of contents
+* [Website](#io)
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Directions](#directions)
 * [Processing](#in_processing)
-
+* [Contact Us](#contact_info)
+## Website
+https://shuyuan66.github.io/epidemiology_capstone_web/
 ## General info
-- Use covid-19 datasets provided by JHU to fit epidemiology model to U.S.. After figuring out the infection parameter, we can then predict 
+- Use covid-19 datasets provided by JHU to fit epidemiology model to U.S. After figuring out the infection parameter, we can then predict infected number for future. 
+- 
 
 ## Introduction
-Fitting Epidemiology Model with Covid-19 JHU U.S. Data
+he early state and late stage of a pandemic is very different. At early stage, the case number grows exponentially. Government agencies and institutions want to the ability to forecast the number of cases in order to allocated medical and other resources. Furthermore, knowing how protocols such as stay at home order can affect the case number is extremely useful to make predictions. However, in order to predict number of cases in the future, the growth factor is needed and can be generated from fitting previous data to an epidemiology model. The exponential factor is based on two factors that can be learned from data: the infection rate, $\beta$ and number of days a patient stays infectious $D$.
+
 
 ## Technology
 Project is created with:
@@ -26,72 +31,32 @@ Project is created with:
 `python run.py test` to start
 
 ## Processing
-### Gradient Descent to solve for $\beta$ and $\frac{1}{D}$ 
+We are using gradient descent to find infection rate and infection duration. Then we want to check whether the parameters can predict useful information (accuracy). 
 
-Given: 
+However, in reality, the case numbers of the entire country/state is not evenly distributed among counties. Besides computing the individual infection rate for all the counties, each as a separate entity from its neighbors, we will predict case numbers based on the mobility data provided by Descartes Labs[3] (how fast is people moving inside each county and across county boundaries), and the case numbers of each county's neighboring counties. We will use a $dt$ around 0.001 day instead of 1 day to better predict the dynamics. This process requires a fixed $\beta$ and $D$ predetermined for each county. 
 
-$$\xi = \frac{1}{D} $$
-  $$f_s(I_n,N,S_n) = -\beta\left(\frac{I_n}{N}\right) S_n$$
-  $$f_I(I_n,N,S_n) = - I\xi + \beta\left(\frac{I_n}{N}\right) S_n$$
-  $$f_R(I_n) = I_n\xi$$
-  $$h=1$$
+Furthermore, $\beta$ and $D$ are also dynamic. So in the future, we will replace the fixed $\beta$ and $D$ with dynamic, changing according to the data.
 
-
-
-Plug the above values into
-
-$\frac{1}{N}$ $\sum_{n=1}^N \nabla_{\theta}$ (($\frac{s(n+1)-s(n)}{h} - f_s(s(n)$ $I(n), R(n)$; $\theta ))^2$ + (($\frac{I(n+1)-I(n)}{h} - f_I(s(n)$ $I(n), R(n)$; $\theta ))^2$ + ....
-
-To calculate the above the term, we need to use __chain rule__ to differentiate with respect to $\beta$ and $\xi$
-
-$\nabla_{\beta} = 2 \cdot \left(\frac{S_{n+1} - S_{n}}{h} - \left(-\beta S_n  \frac{I_n}{N}\right) \right) \cdot \left(S_n \cdot \frac{I_n}{N}\right) + 2 \cdot \left(\frac{I_{n+1} - I_{n}}{h}  - \left( -\xi_k I_n + \beta_k \frac{I_n}{N} S_n \right)\right) \cdot \left( -S_n \cdot \frac{I_n}{N}\right)$
-
-$\nabla_{\xi} = 2 \cdot \left(\frac{I_{n+1} - I_{n}}{h}  + \left(I_n\xi_k - \beta_k \frac{I_n}{N}S_n\right) \right) \cdot \left(I_n\right) + 2 \cdot \left(\frac{R_{n+1} - R_{n}}{h} - I_n\xi_k\right) \cdot \left( -I_n\right)$
-
-
-
-## Tuning learning rate
- $\nabla_{\beta} = 2 \cdot \left(\frac{S_{n+1} - S_{n}}{h} - \left(-\beta_{k} S_n  \frac{I_n}{N}\right) \right) \cdot \left(S_n \cdot \frac{I_n}{N}\right) + 2 \cdot \left(\frac{I_{n+1} - I_{n}}{h}  - \left( -\xi_k I_n + \beta_k \frac{I_n}{N} S_n \right)\right) \cdot \left( -S_n \cdot \frac{I_n}{N}\right)$
-
-$\nabla_{\xi} = 2 \cdot \left(\frac{I_{n+1} - I_{n}}{h}  + \left(I_n\xi_k - \beta_k \frac{I_n}{N}S_n\right) \right) \cdot \left(I_n\right) + 2 \cdot \left(\frac{R_{n+1} - R_{n}}{h} - I_n\xi_k\right) \cdot \left( -I_n\right)$
-
-
-We can calculate the hessian matrix given s,i arrays and population 
-
- $
- \begin{aligned}
- \frac{\partial \nabla_{\beta}}{\partial \beta} &= \frac{1}{N} \sum_{n=1}^N \left(2\cdot \left(S_{n}\cdot \frac{I_{n}}{N}\right)^2 + 2\cdot \left(S_{n} \cdot \frac{I_{n}}{N}\right) ^2\right) \\
- &= \frac{1}{N} \sum_{n=1}^N \left(4\cdot \left(S_{n}\cdot \frac{I_{n}}{N}\right)^2\right) 
-  \end{aligned}$
- 
-  $\begin{aligned}
-  \frac{\partial \nabla_{\xi}}{\partial \xi} &= \frac{1}{N} \sum_{n=1}^N \left(2\cdot I_{n} ^2 + 2\cdot I_{n} ^2\right) \\
-  &= \frac{1}{N} \sum_{n=1}^N  4\cdot I_{n} ^2
-  \end{aligned}$
-  
-   $
- \begin{aligned}
- \frac{\partial \nabla_{\xi}}{\partial_{\beta}} &=  \frac{1}{N} \sum_{n=1}^N -2 \cdot S_{n}\cdot \frac{I_{n}^2}{N} \\
- & = \frac{\partial \nabla_{\beta}}{\partial_{\xi}}
-  \end{aligned}$
-  
-  
-
-  
-We then use numpy.lin.eg to get the eigen value of the hessian matrix
+The mobility data is representing the distance a typical member of a given population moves in a day. With this data set, we are able to see how stay-at-home orders by different states and the pandemic itself have effect on average mobility trends. The data set also provides additional information for our epidemiology model. 
 
 ### Achievements
 <p align="center"><img src="sources/south_cal.png" ></p>
+One of the pressing problems in epidemiology is long term prediction of the spreading of an infectious disease. Of particular interest is how mitigation measures (government policies) can affect the number of infected in the future. Numerous efforts have been tried around the world. Many cities and states in the U.S. have ordered stay-at-home policies. It is useful to see how administering these orders can affect the case numbers, how would the case numbers react if the government revoke the orders.[1]
 
-We applied our methods to south California.  We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases.
-<p align="center"><img src="sources/us.png" ></p>
-<p align="center"><img src="sources/cal.png" ></p>
+As our test dataset, We applied our methods to south California.  We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases.
+- Figure 1
+<p align="center"><img src="sources/us.png" ></p> 
+
+- Figure 2 
+<p align="center"><img src="sources/cal.png" ></p> 
+
+- Figure 3
 <p align="center"><img src="sources/sd.png" ></p>
 
 ### Problem to Solve
 
 - [TODO] Using Apple's mobility data, we are able to fit a Bayesian model and use the model to predict future number of infected with new lockdowns/un-lockdowns. 
 
-## Contact
+## Contact US
 - Shuyuan Wang shw276@ucsd.edu
 - Caiwei Wang caw062@ucsd.edu
