@@ -9,11 +9,12 @@
 * [Directions](#directions)
 * [Processing](#in_processing)
 * [Contact Us](#contact_info)
+
 ## Website
-https://shuyuan66.github.io/epidemiology_capstone_web/
+https://shuyuan66.github.io/capstone_epidemiology__web/
+
 ## General info
 - Use covid-19 datasets provided by JHU to fit epidemiology model to U.S. After figuring out the infection parameter, we can then predict infected number for future. 
-- 
 
 ## Introduction
 he early state and late stage of a pandemic is very different. At early stage, the case number grows exponentially. Government agencies and institutions want to the ability to forecast the number of cases in order to allocated medical and other resources. Furthermore, knowing how protocols such as stay at home order can affect the case number is extremely useful to make predictions. However, in order to predict number of cases in the future, the growth factor is needed and can be generated from fitting previous data to an epidemiology model. The exponential factor is based on two factors that can be learned from data: the infection rate, $\beta$ and number of days a patient stays infectious $D$.
