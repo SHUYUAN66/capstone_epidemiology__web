@@ -16,7 +16,7 @@ Fitting Epidemiology Model with Covid-19 JHU U.S. Data
 
 ## Technology
 Project is created with:
-* Image : ucsdets/scipy-ml-notebook	
+- Image : ucsdets/scipy-ml-notebook	
 
 ## Setup
 - Before running, use `pip install -r requirements.txt` to install all the required packages
