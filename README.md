@@ -40,20 +40,22 @@ Furthermore, $\beta$ and $D$ are also dynamic. So in the future, we will replace
 The mobility data is representing the distance a typical member of a given population moves in a day. With this data set, we are able to see how stay-at-home orders by different states and the pandemic itself have effect on average mobility trends. The data set also provides additional information for our epidemiology model. 
 
 ### Achievements
-<p align="center"><img src="sources/south_cal.png" ></p>
-One of the pressing problems in epidemiology is long term prediction of the spreading of an infectious disease. Of particular interest is how mitigation measures (government policies) can affect the number of infected in the future. Numerous efforts have been tried around the world. Many cities and states in the U.S. have ordered stay-at-home policies. It is useful to see how administering these orders can affect the case numbers, how would the case numbers react if the government revoke the orders.[1]
 
-As our test dataset, We applied our methods to south California.  We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases.
-- Figure 1
+We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases.
+
+Figure 1
 <p align="center"><img src="sources/us.png" ></p> 
 
-- Figure 2 
+Figure 2 
 <p align="center"><img src="sources/cal.png" ></p> 
 
-- Figure 3
+Figure 3
 <p align="center"><img src="sources/sd.png" ></p>
 
 ### Problem to Solve
+<p align="center"><img src="sources/south_cal.png" ></p>
+
+One of the pressing problems in epidemiology is long term prediction of the spreading of an infectious disease. Of particular interest is how mitigation measures (government policies) can affect the number of infected in the future. Numerous efforts have been tried around the world. Many cities and states in the U.S. have ordered stay-at-home policies. It is useful to see how administering these orders can affect the case numbers, how would the case numbers react if the government revoke the orders. As our test dataset, We applied our methods to south California. 
 
 - [TODO] Using Apple's mobility data, we are able to fit a Bayesian model and use the model to predict future number of infected with new lockdowns/un-lockdowns. 
 
