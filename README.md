@@ -59,6 +59,8 @@ We will use spatial dynamics to predict case numbers for the next day based on t
 
 ## Result & Discussion
 
+<img src="https://user-images.githubusercontent.com/49173407/110287289-31a36500-8021-11eb-884d-e0ab72caf58b.gif" width="90%"></img>
+
 ### Example: California, 3/2/2021
 
 <img src="https://user-images.githubusercontent.com/49173407/110284425-c6f02a80-801c-11eb-8111-d7e41d4a01cb.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/49173407/110284418-c2c40d00-801c-11eb-9ec7-4ea5a8ac02b1.png" width="45%"></img>
