@@ -6,9 +6,9 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Directions](#directions)
-* [Processing](#in_processing)
-* [Contact Us](#contact_info)
+* [Directions] (#directions)
+* [Processing] (#processing)
+* [Contact Us] (#contact_info)
 
 ## Website
 https://shuyuan66.github.io/capstone_epidemiology__web/
