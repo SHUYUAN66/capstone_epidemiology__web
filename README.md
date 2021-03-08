@@ -44,11 +44,11 @@ The mobility data is representing the distance a typical member of a given popul
 
 We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases.
 
-<img width="442" alt="us" src="https://user-images.githubusercontent.com/49173407/110287019-d3768200-8020-11eb-8914-004beefc5602.png">
+<img width="80%" alt="us" src="https://user-images.githubusercontent.com/49173407/110287019-d3768200-8020-11eb-8914-004beefc5602.png">
 
-<img width="417" alt="sd" src="https://user-images.githubusercontent.com/49173407/110287015-d2455500-8020-11eb-86f0-1334c86e8d60.png">
+<img width="80%"alt="cal" src="https://user-images.githubusercontent.com/49173407/110287008-cfe2fb00-8020-11eb-89f4-2b33175a28e0.png">
 
-<img width="434" alt="cal" src="https://user-images.githubusercontent.com/49173407/110287008-cfe2fb00-8020-11eb-89f4-2b33175a28e0.png">
+<img width="80%"alt="sd" src="https://user-images.githubusercontent.com/49173407/110287015-d2455500-8020-11eb-86f0-1334c86e8d60.png">
 ### Use Geographical Information And Mobility Data to Predict County Infection
 
 One of the pressing problems in epidemiology is long term prediction of the spreading of an infectious disease. Of particular interest is how mitigation measures (government policies) can affect the number of infected in the future. Numerous efforts have been tried around the world. Many cities and states in the U.S. have ordered stay-at-home policies. It is useful to see how administering these orders can affect the case numbers, how would the case numbers react if the government revoke the orders. As our test dataset, We applied our methods to California. 
