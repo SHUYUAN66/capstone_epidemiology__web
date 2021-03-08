@@ -44,14 +44,7 @@ The mobility data is representing the distance a typical member of a given popul
 
 We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases.
 
-Figure 1
-<p align="center"><img src="sources/us.png" ></p> 
-
-Figure 2 
-<p align="center"><img src="sources/cal.png" ></p> 
-
-Figure 3
-<p align="center"><img src="sources/sd.png" ></p>
+<img src="https://user-images.githubusercontent.com/49173407/110281161-25b2a580-8017-11eb-8889-8ef0419fdd4f.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/49173407/110281170-29462c80-8017-11eb-9681-aded85eb2dec.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/49173407/110281176-2a775980-8017-11eb-9499-efe9f37600cd.png" width="30%"></img> <img src="https://cloud.githubusercontent.com/assets/4307137/10105288/28698fae-63ae-11e5-8ba7-a62360a8e8a7.png" width="30%"></img> <img src="https://cloud.githubusercontent.com/assets/4307137/10105283/251b6868-63ae-11e5-9918-b789d9d682ec.png" width="30%"></img> <img src="https://cloud.githubusercontent.com/assets/4307137/10105290/2a183f3a-63ae-11e5-9380-50d9f6d8afd6.png" width="30%"></img> 
 
 ### Use Geographical Information And Mobility Data to Predict County Infection
 
@@ -60,8 +53,6 @@ One of the pressing problems in epidemiology is long term prediction of the spre
 Each county is never in total isolation from other counties. There is always traffic going in and out of the counties at county borders. So it is necessary to account for the relative mobility, what are the neighboring counties and what are the infection numbers of the neighboring counties to predict infection numbers for each county.
 
 We will use spatial dynamics to predict case numbers for the next day based on the case numbers of the previous day (and of course, geographical information and mobility score)
-
-<p align="center"><img src="sources/south_cal.png" ></p>
 
 ## Result & Discussion
 
