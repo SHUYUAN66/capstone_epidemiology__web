@@ -44,7 +44,7 @@ The mobility data is representing the distance a typical member of a given popul
 
 We obtained the following results:At US country level (Figure 1), the model is underestimating the number of cases.  At state and countylevel (Figure 2 and Figure 3), the model is overestimating the number of cases.
 
-<img src="https://user-images.githubusercontent.com/49173407/110281161-25b2a580-8017-11eb-8889-8ef0419fdd4f.png" width="30%" caption = "Figure1. US 60 days predicting trend"></img> <img src="https://user-images.githubusercontent.com/49173407/110281170-29462c80-8017-11eb-9681-aded85eb2dec.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/49173407/110281176-2a775980-8017-11eb-9499-efe9f37600cd.png" width="30%"></img>  
+<img src="https://user-images.githubusercontent.com/49173407/110281161-25b2a580-8017-11eb-8889-8ef0419fdd4f.png" width="30%" title = "Figure1. US 60 days predicting trend"></img> <img src="https://user-images.githubusercontent.com/49173407/110281170-29462c80-8017-11eb-9681-aded85eb2dec.png" width="30%"></img> <img src="https://user-images.githubusercontent.com/49173407/110281176-2a775980-8017-11eb-9499-efe9f37600cd.png" width="30%"></img>  
 
 ### Use Geographical Information And Mobility Data to Predict County Infection
 
