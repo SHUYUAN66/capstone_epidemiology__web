@@ -58,16 +58,16 @@ We will use spatial dynamics to predict case numbers for the next day based on t
 
 ### Example: California, 3/2/2021
 
-<img src="https://user-images.githubusercontent.com/49173407/110284425-c6f02a80-801c-11eb-8111-d7e41d4a01cb.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/49173407/110284418-c2c40d00-801c-11eb-9ec7-4ea5a8ac02b1.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/49173407/110284425-c6f02a80-801c-11eb-8111-d7e41d4a01cb.png" width="45%"> <img src="https://user-images.githubusercontent.com/49173407/110284418-c2c40d00-801c-11eb-9ec7-4ea5a8ac02b1.png" width="45%">
 
 These two Heat maps shows how different the actual cases as well as the predicting cases differently distributing in California. From the actual cases map, Los Angelas county with darkest green has the most number of actual cases. However after predicting based on the past days, Imperial county was predicted to have the most number of cases.
 
 
-<img src="https://user-images.githubusercontent.com/49173407/110284967-847b1d80-801d-11eb-951d-939263e10974.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/49173407/110284965-82b15a00-801d-11eb-9a8f-b05094107367.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/49173407/110284967-847b1d80-801d-11eb-951d-939263e10974.png" width="45%"> <img src="https://user-images.githubusercontent.com/49173407/110284965-82b15a00-801d-11eb-9a8f-b05094107367.png" width="45%"> 
 
 The absolute percent difference between actual cases and predicting cases, as the heatmap and the treemap show that most of the counties were predicted under 25%. In the meantime, we can see that the counties we have really "inaccurate" predictions is Imperial county, which is in the corners of all the counties we took into consideration. The missing data for neighboring counties for the counties on edges/corners can explain away some of the inaccuracy in predictions for these counties.
 
-<img src="https://user-images.githubusercontent.com/49173407/110285583-6c57ce00-801e-11eb-8805-1aabbde36d29.png" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/49173407/110285583-6c57ce00-801e-11eb-8805-1aabbde36d29.png" width="45%">
 In addition, the positive or negative percent difference is another issue to investigate on. 
 
 
